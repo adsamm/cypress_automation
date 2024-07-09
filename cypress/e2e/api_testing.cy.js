@@ -1,4 +1,5 @@
 describe("API Testing", () => {
+
     it("GET the list of employees", () => {
         cy.request({
             method: "GET",
@@ -46,7 +47,6 @@ describe("API Testing", () => {
             }
         }).then(function (response) {
             expect(response.status).to.equal(200)
-            //expect(response.body.id).to.equal(101);
             cy.log(JSON.stringify(response.body));
             console.log(response.body);
         });
@@ -61,11 +61,11 @@ describe("API Testing", () => {
             }
         }).then(function (response) {
             expect(response.status).to.equal(200)
-            //expect(response.body.id).to.equal(101);
             cy.log(JSON.stringify(response.body));
             console.log(response.body);
         })
     })
+
     it("DELETE the employee by id", () => {
         cy.request({
             method: "DELETE",
@@ -75,7 +75,6 @@ describe("API Testing", () => {
             },
         }).then(response => {
             expect(response.status).to.equal(200)
-            //expect(response.body.results[0].userId).to.eq(userId);
         })
     })
 
