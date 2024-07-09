@@ -6,7 +6,7 @@ describe('Happy flow, adding random valid input data', () => {
   const randomDependents = Math.floor(Math.random() * 100) + 1;
 
   const faker = require('faker')
-  const firstName = faker.name.findName()
+  const firstName = faker.name.firstName()
   const lastName = faker.name.lastName()
 
   it('Logs in the dashboard, where we can manage user ' +
@@ -45,7 +45,7 @@ describe('Happy flow, adding random valid input data', () => {
       'which is not possible, status code 500)', function () {
 
     LoginPage.goToHomePage()
-        .typeInUserName(firstName)
+        .typeInUserName()
         .typeInPassword()
         .submitLogin()
 

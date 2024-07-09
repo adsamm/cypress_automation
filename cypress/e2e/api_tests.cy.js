@@ -59,10 +59,8 @@ describe("API Testing", () => {
             headers: {
                 authorization: 'Basic VGVzdFVzZXIzOTg6SUBGJWM1QEN4TDVx'
             }
-        }).then(function (response) {
+        }).then(response => {
             expect(response.status).to.equal(200)
-            cy.log(JSON.stringify(response.body));
-            console.log(response.body);
         })
     })
 
